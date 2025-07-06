@@ -35,24 +35,29 @@
     height: 15vw;
     min-height: 44px;
     margin-bottom: -2vw;
+    position: absolute;
+    left: 50%;
+    top: 2vw;
+    transform: translateX(-50%) translateY(-90%);
+    /* O translateY negativo puxa o grupo de pétalas para cima, alinhando com o topo do caule */
   }
   .flower-modern__center {
     width: 7vw;
     min-width: 20px;
     height: 7vw;
     min-height: 20px;
-    top: 5vw;
+    top: 1.5vw;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -70%);
   }
   .flower-modern__white-circle {
     width: 6vw;
     min-width: 16px;
     height: 2.5vw;
     min-height: 8px;
-    top: 4.6vw;
+    top: 1vw;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-70%);
   }
   .flower-modern__leaf {
     width: 6vw;
