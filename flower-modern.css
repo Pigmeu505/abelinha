@@ -20,12 +20,13 @@
 }
 @media (max-width: 600px) {
   .flower-modern {
-    width: 16vw;
-    min-width: 48px;
-    height: 32vw;
-    min-height: 96px;
+    width: 22vw;
+    min-width: 64px;
+    height: 38vw;
+    min-height: 110px;
     left: 50%;
-    bottom: 8vw;
+    bottom: 4vw;
+    margin-bottom: 12px;
     transform: translateX(-50%);
   }
   .flower-modern__leafs {
