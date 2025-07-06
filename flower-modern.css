@@ -20,19 +20,47 @@
 }
 @media (max-width: 600px) {
   .flower-modern {
-    width: 5vmin;
-    height: 10vmin;
+    width: 16vw;
+    min-width: 48px;
+    height: 32vw;
+    min-height: 96px;
+    left: 50%;
+    bottom: 8vw;
+    transform: translateX(-50%);
   }
   .flower-modern__leafs {
-    width: 5vmin;
-    height: 5vmin;
+    width: 15vw;
+    min-width: 44px;
+    height: 15vw;
+    min-height: 44px;
+    margin-bottom: -2vw;
   }
-  .flower-modern__center, .flower-modern__white-circle {
-    width: 1.2vmin;
-    height: 1.2vmin;
-    top: 1.5vmin;
+  .flower-modern__center {
+    width: 7vw;
+    min-width: 20px;
+    height: 7vw;
+    min-height: 20px;
+    top: 5vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .flower-modern__white-circle {
+    width: 6vw;
+    min-width: 16px;
+    height: 2.5vw;
+    min-height: 8px;
+    top: 4.6vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .flower-modern__leaf {
+    width: 6vw;
+    min-width: 18px;
+    height: 8vw;
+    min-height: 24px;
   }
 }
+
 @media (min-width: 1400px) {
   .flower-modern {
     width: 18vmin;
