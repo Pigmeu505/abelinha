@@ -246,10 +246,11 @@ body {
         min-width: 100vw;
         height: 100%;
         padding-top: 16px;
+        padding-bottom: 24px;
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        gap: 12px;
+        gap: 28px;
     }
     .flower, .flower-modern {
         margin: 0 3px;
