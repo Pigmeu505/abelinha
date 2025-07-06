@@ -1,0 +1,146 @@
+/* CSS inspirado no exemplo estilizado do usuário para flores animadas */
+:root {
+  --dark-color: #000;
+}
+
+@media (max-width: 900px) {
+  .flower-modern {
+    width: 8vmin;
+    height: 16vmin;
+  }
+  .flower-modern__leafs {
+    width: 8vmin;
+    height: 8vmin;
+  }
+  .flower-modern__center, .flower-modern__white-circle {
+    width: 2.2vmin;
+    height: 2.2vmin;
+    top: 2.8vmin;
+  }
+}
+@media (max-width: 600px) {
+  .flower-modern {
+    width: 5vmin;
+    height: 10vmin;
+  }
+  .flower-modern__leafs {
+    width: 5vmin;
+    height: 5vmin;
+  }
+  .flower-modern__center, .flower-modern__white-circle {
+    width: 1.2vmin;
+    height: 1.2vmin;
+    top: 1.5vmin;
+  }
+}
+@media (min-width: 1400px) {
+  .flower-modern {
+    width: 18vmin;
+    height: 22vmin;
+  }
+  .flower-modern__leafs {
+    width: 18vmin;
+    height: 18vmin;
+  }
+  .flower-modern__center, .flower-modern__white-circle {
+    width: 7vmin;
+    height: 4vmin;
+    top: 5vmin;
+  }
+}
+
+
+.flower-modern {
+  position: absolute;
+  left: 50%;
+  bottom: 5vmin;
+  transform: translateX(-50%);
+  z-index: 10;
+  --fl-speed: 0.8s;
+  animation: flower-modern-sway 4s linear infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@keyframes flower-modern-sway {
+  0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(2deg); }
+}
+
+.flower-modern__line {
+  height: 8vmin;
+  width: 0.5vmin;
+  background: linear-gradient(to top, #388e3c 80%, #7bc67e 100%);
+  border-radius: 0.5vmin;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px #0002;
+  animation: grow-flower-tree 4s backwards;
+  position: relative;
+  top: -1.6vmin;
+  z-index: 0;
+}
+
+@keyframes grow-flower-tree {
+  0% { height: 0; border-radius: 1vmin; }
+}
+
+.flower-modern__leafs {
+  position: relative;
+  left: 50%;
+  width: 13vmin;
+  height: 13vmin;
+  transform: translateX(-50%) translateY(1.5vmin);
+  animation: blooming-flower 2s backwards;
+  margin-bottom: -2.5vmin;
+}
+
+@keyframes blooming-flower {
+  0% { transform: scale(0) translateX(-50%); }
+}
+.flower-modern__leaf {
+  position: absolute;
+  width: 6vmin;
+  height: 8vmin;
+  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
+  background-color: #ffb6c1;
+  background-image: linear-gradient(to top, #f48fb1, #ad1457);
+  opacity: 0.92;
+  box-shadow: 0 0 1vmin #fff5, inset 0 0 1.5vmin #fff6;
+}
+
+.flower-modern__leaf--1 { left: 0.5vmin; top: 3.5vmin; transform: rotate(-28deg); }
+.flower-modern__leaf--2 { left: 6.5vmin; top: 3.5vmin; transform: rotate(28deg); }
+.flower-modern__leaf--3 { left: 2.2vmin; top: -0.5vmin; transform: rotate(-52deg); }
+.flower-modern__leaf--4 { left: 4.6vmin; top: -1.2vmin; transform: rotate(52deg); }
+
+
+.flower-modern__center {
+  position: absolute;
+  left: 50%;
+  top: 3.9vmin;
+  transform: translate(-50%, 0);
+  width: 3.8vmin;
+  height: 3.8vmin;
+  background: radial-gradient(circle at 60% 40%, #fffbe7 70%, #ffe066 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 1.2vmin #fffbe7bb;
+  z-index: 2;
+}
+
+
+.flower-modern__white-circle {
+  position: absolute;
+  left: 50%;
+  top: 3.7vmin;
+  width: 4vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+  opacity: 0.7;
+  filter: blur(0.15vmin);
+  z-index: 1;
+}
+

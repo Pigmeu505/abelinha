@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top, #5d7263 40%, #6b3e75 100%);
+    min-height: 100vh;
+    transition: background 0.8s;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.sky {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    background: linear-gradient(to top, #4c4376 60%, #f7971e 100%);
+    overflow: hidden;
+    transition: background 0.8s;
+} 
+
+.cloud {
+    position: absolute;
+    background: linear-gradient(135deg, #fff 70%, #f5d6b4 100%);
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(1px);
+    box-shadow: 0 4px 32px #f7971e44;
+    animation: cloud-pulse 6s ease-in-out infinite;
+    transition: opacity 0.8s cubic-bezier(.4,0,.2,1);
+}
+.cloud.invisible {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+.cloud1 {
+    width: 80px; height: 40px; left: 10vw; top: 10vh;
+    animation-delay: 0s, 0s;
+}
+.cloud2 {
+    width: 120px; height: 60px; left: 60vw; top: 5vh;
+    animation-delay: 3s, 2s;
+}
+.cloud3 {
+    width: 100px; height: 50px; left: 110vw; top: 7vh;
+    opacity: 0.38;
+    filter: blur(2px);
+}
+.cloud4 {
+    width: 60px; height: 32px; left: 130vw; top: 12vh;
+    opacity: 0.32;
+    filter: blur(1.5px);
+}
+.cloud5 {
+    width: 140px; height: 70px; left: 150vw; top: 3vh;
+    opacity: 0.41;
+    filter: blur(2.5px);
+}
+
+.garden {
+    position: relative;
+    width: 100vw;
+    min-height: 60vh;
+    background: linear-gradient(to top, #4a5b32 90%, #b8e994 100%);
+    overflow: hidden;
+    transition: background 0.8s;
+}
+
+.flowers {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    pointer-events: none;
+}
+
+.flower {
+    position: relative;
+    width: 44px;
+    height: 90px;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), filter 0.3s;
+    filter: drop-shadow(0 2px 6px #7bc67e66);
+    animation: flower-sway 2.5s ease-in-out infinite alternate, flower-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes flower-sway {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+@keyframes flower-pulse {
+    0%, 100% { scale: 1; }
+    50% { scale: 1.07; }
+}
+
+.flower::before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 65px;
+    background: linear-gradient(to top, #388e3c 80%, #7bc67e 100%);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px #0002;
+}
+.flower1::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle at 14px 14px, #ffeb3b 70%, #fbc02d 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    box-shadow: 0 0 0 8px #fff17655, 0 0 18px #fff17666;
+}
+.flower2::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle at 20px 20px, #f48fb1 70%, #ad1457 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    box-shadow: 0 0 0 8px #f8bbd055, 0 0 18px #f8bbd066;
+}
+.flower3::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle at 10px 10px, #81d4fa 70%, #0288d1 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    box-shadow: 0 0 0 8px #b3e5fc55, 0 0 18px #b3e5fc66;
+}
+.flower4::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle at 24px 24px, #aed581 70%, #689f38 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    box-shadow: 0 0 0 8px #dcedc855, 0 0 18px #dcedc866;
+}
+
+.bee {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 10vw;
+    top: 10vh;
+    z-index: 10;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 2px 8px #fbc02d88) drop-shadow(0 0 2px #0002);
+    animation: bee-wings 0.3s infinite alternate;
+}
+.bee.spinning {
+    animation: bee-spin 0.8s cubic-bezier(.68,-0.55,.27,1.55) 1, bee-wings 0.3s infinite alternate;
+}
+@keyframes bee-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    80% { transform: rotate(360deg) scale(1.15); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes bee-wings {
+    0% { filter: drop-shadow(0 2px 8px #fbc02d88) drop-shadow(0 0 2px #0002) brightness(1); }
+    100% { filter: drop-shadow(0 2px 12px #fbc02d99) drop-shadow(0 0 3px #fff5) brightness(1.08); }
+}
+.bee img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .sky {
+        height: 32vh;
+    }
+    .bee {
+        width: 32px;
+        height: 32px;
+        left: 7vw;
+        top: 7vh;
+    }
+    .garden {
+        min-height: 68vh;
+        padding-bottom: 24px;
+    }
+    .flower, .flower-modern {
+        margin: 12px 0;
+        width: 32px;
+        height: 66px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sky {
+        height: 36vh; /* aumenta área do céu para dar mais espaço para a abelha e nuvens */
+        min-height: 180px;
+    }
+    .bee {
+        width: 36px;
+        height: 36px;
+        left: 8vw;
+        top: 13vh;
+    }
+    .cloud {
+        filter: blur(0.7px);
+    }
+    .cloud1 {
+        width: 60px; height: 30px; left: 10vw; top: 7vh;
+    }
+    .cloud2 {
+        width: 90px; height: 45px; left: 55vw; top: 4vh;
+    }
+    .cloud3 {
+        width: 70px; height: 32px; left: 80vw; top: 9vh;
+    }
+    .garden {
+        min-height: 60vh;
+        padding-bottom: 18px;
+        background: linear-gradient(to top, #4a5b32 92%, #b8e994 100%);
+    }
+    .flowers {
+        left: 0;
+        width: 100vw;
+        min-width: 100vw;
+        height: 100%;
+        padding-top: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 12px;
+    }
+    .flower, .flower-modern {
+        margin: 0 3px;
+        width: 18px;
+        height: 36px;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .sky {
+        height: 50vh;
+    }
+    .bee {
+        width: 68px;
+        height: 68px;
+        left: 12vw;
+        top: 12vh;
+    }
+    .garden {
+        min-height: 60vh;
+    }
+    .flower, .flower-modern {
+        margin: 0 32px;
+        width: 66px;
+        height: 132px;
+    }
+}
+
+
+/* Animação de florescer */
+.flower.florescendo {
+    transform: scale(1.25) rotate(-2deg);
+    filter: brightness(1.2) drop-shadow(0 0 20px #fff9c4cc);
+    z-index: 2;
+}
+
